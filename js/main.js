@@ -33,3 +33,13 @@ $(function(){
     var $this = $(this);
     var note = $(this).attr("data-note");
     var octave = $(this).attr("data-octave");
+
+    play($this, note, octave);
+    
+    $(".key").mouseover(function(){
+      var $this = $(this);
+      var note = $(this).attr("data-note");
+      var octave = $(this).attr("data-octave");
+
+      play($this, note, octave);    
+    });
