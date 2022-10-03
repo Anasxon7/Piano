@@ -49,3 +49,15 @@ $(function(){
       });
     });
   });
+
+  function setup() {
+    $.each(notes, function(i, note){
+      var octave = 5;
+
+      if(note === "B"){
+        var octave = octave - 1;
+      }
+      if(note === "C"){
+        var octave = octave + 1;
+      }
+    
