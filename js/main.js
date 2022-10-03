@@ -43,3 +43,9 @@ $(function(){
 
       play($this, note, octave);    
     });
+
+    $(document).mouseup(function(){
+        $(".key").unbind("mouseover");
+      });
+    });
+  });
