@@ -110,3 +110,49 @@ menu {
     }
   }
 }
+
+
+[data-note*="#"] {
+    position: absolute;
+    z-index: 100;
+    width: 12.5%;
+    background: #111;
+    transform-origin: center top;
+    transform: translateX(-50%) scale(.6);
+    border-radius: 0 0 $radius*1.6 $radius*1.6;
+    
+    &:after {
+      font-size: 2.5rem;
+      top: inherit;
+      bottom: 100%;
+    }
+    
+    &:hover {
+      background: tint(black, 20%);
+    }
+    
+    &.active {
+      animation: blacks 300ms;
+    }
+  }
+  
+  @keyframes secrets {
+    from {
+      opacity: .2;
+      background: tint(black, 35%);
+    }
+  }
+  @keyframes whites {
+    from { 
+      background: tint(black, 35%);
+      color: ivory;
+      text-shadow: 0 0 1rem, 0 0 2rem, 0 0 3rem;
+    }
+  }
+  @keyframes blacks {
+     from {
+      background: tint(black, 35%);
+      color: ivory;
+      text-shadow: 0 0 1rem, 0 0 2rem, 0 0 3rem;  
+    }
+  }
