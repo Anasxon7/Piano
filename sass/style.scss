@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+$blue : #22475E;
+$yellow : #4C4A30;
+$red : #421D26;
+$radius : 5px;
+
+html, body { height: 100%; }
+body {
+  font-family: "Open Sans Condensed";
+  animation: bg 30s linear infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $blue;
+  padding: .25rem 1rem;
+}
+
+@keyframes bg {
+  from, to { background: $blue; }
+  33% { background: $yellow; }
+  66% { background: $red; }
+}
+
+menu {  
+  label {
+    display: inline-block;
+    font-size: 1.3rem;
+    padding: .5rem 1rem;
+    background: rgba(ivory, .3);
+    cursor: pointer;
+    transition: .5s;
+    
+    &:first-of-type { border-radius: $radius 0 0 $radius; }
+    &:last-of-type { border-radius: 0 $radius $radius 0; }
+  }
+  
+  input { 
+    display: none;
+    
+    &:checked + label {
+      background: rgba(ivory, .9);
+      transition: 0;
+    }
+  }
+  
+  margin-bottom: 4rem;
+}
+
+.keyboard {
+  width: 40rem;
+  position: relative;
+}
+
+.key {
+  display: inline-block;
+  position: relative;
+  width: 11.111%;
+  padding-bottom: 35%;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.3);
+  background: ivory;
+  vertical-align: top;
+  cursor: pointer;
+  border-radius: $radius;
+  transition: 1s;
+  color: rgba(255,255,255, .3);
+  
+  &:after {
+    display: block;
+    font-family: "Open Sans Condensed";
+    font-size: 1.5rem;
+    line-height: 2;
+    text-align: center;
+    content: attr(data-note);
+    
+    .keybind & { content: attr(data-bind); }
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+  }
+  
+  &:hover {
+    background: shade(ivory, 10%);
+    transition: .2s;
+  }
+  
+  
+  &.active {
+    animation: blacks 300ms;
+  }
+  
+  &:focus { outline: 0; }
+  
+  &:first-child,
+  &:last-child {
+    opacity: 0;
+    
+    &.active {
+      animation: secrets 300ms;
+    }
+  }
+}
