@@ -67,3 +67,11 @@ $(function(){
     });
 }
 
+function play($this, note, octave) {
+    console.log(note + octave);
+    
+    $this.addClass("active");
+    
+    var play = beeplay().play(note + octave, 3/4);
+  }
+  
