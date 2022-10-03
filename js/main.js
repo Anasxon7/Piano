@@ -13,3 +13,12 @@ $(function(){
       $("html").removeClass("keybind");
     }
   });
+
+  $(document).keydown(function(e){
+    var pressed = String.fromCharCode(e.which);
+    
+    if(keybind.indexOf(pressed) !== -1){
+      var index = keybind.indexOf(pressed);
+         
+      $('.key[data-note="' + notes[index] + '"]').mousedown();
+      
