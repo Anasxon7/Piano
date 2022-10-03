@@ -61,3 +61,9 @@ $(function(){
         var octave = octave + 1;
       }
     
+      var $key = $('<button class="key" data-bind="' + keybind[i] + '" data-note=' + note + ' data-octave=' + octave + '></button>');
+    
+      $(".keyboard").append($key);
+    });
+}
+
