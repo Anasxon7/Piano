@@ -22,3 +22,14 @@ $(function(){
          
       $('.key[data-note="' + notes[index] + '"]').mousedown();
       
+      
+      setTimeout(function(){
+        $(".key").removeClass("active").unbind("mouseover");      
+      }, 300);
+    }
+  });
+
+  $(".key").mousedown(function(){
+    var $this = $(this);
+    var note = $(this).attr("data-note");
+    var octave = $(this).attr("data-octave");
